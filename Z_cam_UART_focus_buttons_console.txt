@@ -29,7 +29,7 @@ INIT: Focus infinity
 Focus infinity
 INIT: Switch to stills mode
 Send buffer
-INIT: End				# Scetch enters main loop here.
+INIT: End				# Sketch enters main loop here.
 Button B3				# Button press, focus one step closer.
 Focus to step 1
 Button B7				# Button press, take a picture.
