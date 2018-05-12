@@ -4,7 +4,7 @@ Controlling the Z CAM E1 through its I/O port.
 This repository will hold bits and bobs from my experiments with the Z CAM E1's I/O port
 and the API described at https://github.com/imaginevision/Z-Camera-Doc.
 
-I test on a close relative to the Arduino, a Teensy 2.0 by pjrc.com
+For Arduino stuff, I test on a close relative to it, a [Teensy 2.0 by PJRC](https://www.pjrc.com/store/teensy.html).
 
 ![My test setup](Test_setup.jpg)
 Bitscope oscilloscope/logic analyzer, breadboard, camera, batteries as focus targets and a CVBS monitor.
