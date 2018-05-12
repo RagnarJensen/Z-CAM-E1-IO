@@ -8,6 +8,7 @@ I test on a close relative to the Arduino, a Teensy 2.0 by pjrc.com
 
 ![My test setup](Test_setup.jpg)
 Bitscope oscilloscope/logic analyzer, breadboard, camera, batteries as focus targets and a CVBS monitor.
+The grey, furry things on the camera are [Rycote Micro Windjammers](https://rycote.com/microphone-windshield-shock-mount/micro-windjammers/).
 
 ![Connections on the Teensy](Connections_Teensy.jpg)
 Which pin is what on the Teensy 2.0
