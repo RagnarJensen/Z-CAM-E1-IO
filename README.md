@@ -7,7 +7,7 @@ and the API described at https://github.com/imaginevision/Z-Camera-Doc.
 I test on a close relative to the Arduino, a Teensy 2.0 by pjrc.com
 
 ![My test setup](Test_setup.jpg)
-Bitscope oscilloscope, breadboard, camera, batteries as focus targets and a CVBS monitor.
+Bitscope oscilloscope/logic analyzer, breadboard, camera, batteries as focus targets and a CVBS monitor.
 
 ![Connections on the Teensy](Connections_Teensy.jpg)
 Which pin is what on the Teensy 2.0
