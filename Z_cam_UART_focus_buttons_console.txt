@@ -1,0 +1,37 @@
+INIT: Start
+INIT: i2c: Listen on 0x51
+INIT: UART
+INIT: Buttons
+INIT: LED
+INIT: Set AF
+Switch to AF
+Waiting for camera response...
+Response length: 0		
+
+Switch to AF
+Waiting for camera response...		# Camera was powered off. I switched it on here.
+Response length: 0
+
+Switch to AF
+Waiting for camera response...
+i2c: Sent 0x3				# Camera reads i2c eeprom. This happens very early in the boot sequence.
+Response length: 0			# Camera is still booting...
+
+Switch to AF
+Waiting for camera response...
+Response length: 0			# Camera is still booting...
+
+Switch to AF
+Waiting for camera response...
+Response length: 5			# Camera has finished booting, now responds to commands.
+Response: 0xEA 0x2 0x2 0x8E 0x0 	# This is the camera saying "OK" in response to the SET_AF command.
+INIT: Focus infinity
+Focus infinity
+INIT: Switch to stills mode
+Send buffer
+INIT: End				# Scetch enters main loop here.
+Button B3				# Button press, focus one step closer.
+Focus to step 1
+Button B7				# Button press, take a picture.
+Shutter
+Send buffer
