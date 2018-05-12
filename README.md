@@ -14,4 +14,5 @@ Which pin is what on the Teensy 2.0
 
 ![The breadboard](Breadboard.jpg)
 The breadboard set up for UART control.
+The two resistors on the right are pull-ups for the i2c lines.
 
