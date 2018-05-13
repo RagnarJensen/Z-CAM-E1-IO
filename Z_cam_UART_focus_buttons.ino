@@ -26,6 +26,8 @@
  *  Press button 3 to focus closer, in the same steps as above.
  *  Press button 7 to take a picture.
  *  Blinks the on-board LED in different patterns, to show status.
+ *
+ *  @Author: Ragnar Jensen
  *  
 */
 
