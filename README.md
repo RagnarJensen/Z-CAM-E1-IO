@@ -18,5 +18,6 @@ The breadboard set up for UART control with push buttons.
 
 ![The breadboard with analog input added](Focus_control_by_analog_input.jpg)
 The breadbord with a potentiometer added, for analog input.
-Code for that is in [Z_cam_UART_focus_analog_pot.ino](https://[Z_cam_UART_focus_analog_pot.ino)
+Code for that is in [Z_cam_UART_focus_analog_pot.ino](https://github.com/RagnarJensen/Z-CAM-E1-IO/blob/master/Z_cam_UART_focus_analog_pot.ino)
+
 
