@@ -17,3 +17,7 @@ Which pin is what on the Teensy 2.0
 The breadboard set up for UART control.
 The two resistors on the right are pull-ups for the i2c lines.
 
+![The breadboard with analog input added](Focus_control_by_analog_input.jpg)
+The breadbord with a potentiometer added, for analog input.
+Code for it is in Z_cam_UART_focus_analog_pot.ino
+
