@@ -1,3 +1,7 @@
+infinity: 155
+closefocus: 1156
+span: 1001
+stepsize: 0.98
 INIT: Start
 INIT: i2c: Listen on 0x51
 INIT: UART
@@ -30,6 +34,20 @@ Focus infinity
 INIT: Switch to stills mode
 Send buffer
 INIT: End				# Sketch enters main loop here.
+Analog input changed, refocus!
+Send buffer
+Button B1
+Focus near
+Focusing, please wait... done
+Analog input changed, refocus!
+Send buffer
+Analog input changed, refocus!
+Send buffer
+Analog input changed, refocus!
+Send buffer
+Button B7				# Button press, take a picture.
+Shutter
+Send buffer
 Button B3				# Button press, focus one step closer.
 Focus to step 1
 Button B7				# Button press, take a picture.
