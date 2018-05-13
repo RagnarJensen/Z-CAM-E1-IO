@@ -41,9 +41,12 @@ const unsigned int  closefocus = 0x0484; // Ditto, for closest focus.
 unsigned int        span;
 unsigned int        focusTo, oldfocusTo;
 float               stepsize;
-int                 focusStepSize = 5;  // How much analog input should change, before we actually take action and refocus.
+int                 focusStepSize = 3;  // How much analog input should change, before we actually take action and refocus.
                                         // Set to more than 1, to avoid refocusing if there is jitter on the analog input.
+                                        // The downside is that the number of steps the lens can make gets smaller and the step size gets larger.
+                                        // I get som jitter just by touching the metal shield on my potentiometer...
 
+int                 focusSpeed = 3;     // How fast the lens should move. Cameras default is 1. I don't know the upper limit...
 float               focusValue;
 
 // Used for converting 32 bit integers to byte array and vice versa.
@@ -63,6 +66,9 @@ char    switchToMovie[]  = {0xea, 0x02, 0x01, 0x02};
 char    switchToStill[]  = {0xea, 0x02, 0x01, 0x03};
 char    switchToMF[]     = {0xea, 0x02, 0x04, 0x0e, 0x16, 0x01, 0x00};
 char    switchToAF[]     = {0xea, 0x02, 0x04, 0x0e, 0x16, 0x01, 0x01};
+char    setFocusSpeed[]  = {0xea, 0x02, 0x07, 0x0e, 0x35, 0x02, 0x00, 0x00, 0x00, 0x01}; // Last byte holds focus speed, camera's default is 1.
+
+
 /*
  * These next three arrays hold commands to set the focus position at different points.
  * I got the values for the first two (infinity and close focus) by simply performing AF operations by hand, with the camera's buttons, 
@@ -74,7 +80,7 @@ char    switchToAF[]     = {0xea, 0x02, 0x04, 0x0e, 0x16, 0x01, 0x01};
  */
 char    focusToInf[]     = {0xea, 0x02, 0x07, 0x0e, 0x34, 0x02, 0x00, 0x00, 0x00, 0x9b};  // The four last bytes are the "inifinity" lens position of my Olympus 25/1.8 lens.
 char    focusToClose[]   = {0xea, 0x02, 0x07, 0x0e, 0x34, 0x02, 0x00, 0x00, 0x04, 0x84};  // Ditto, for when the lens is focused as close as it can.
-char    focusToX[]       = {0xea, 0x02, 0x07, 0x0e, 0x34, 0x02, 0x00, 0x00, 0x00, 0x9b};  // We manipulate the next to last byte of this array, with values between 0 and 4, to focus in 5 "steps".
+char    focusToX[]       = {0xea, 0x02, 0x07, 0x0e, 0x34, 0x02, 0x00, 0x00, 0x00, 0x9b};  // We manipulate the next to last byte of this array, with values between 0 and 4, to focus in 5 "steps" with the buttons.
 
 char    capture[]        = {0xea, 0x02, 0x01, 0x07}; // Command string to take a picture.
 
@@ -94,9 +100,12 @@ int analogPot;                 // Values from potentiometer on pin A0.
 void setup() {
   Serial.begin (9600); // Console
 
+  Serial.println("INIT: Start");
   span = closefocus - infinity;  // How many steps there are between infinity and closest focus, as an integer.
   stepsize = (float)span / 1024; // Anlog values range 0 - 1023. stepsize is how much to change the focus position value when the analog value changes by 1.
                                   // With my Olympus 25/1.8 lens' values for infinity and close focus, stepsize ends up being 0.98.
+
+  setFocusSpeed[9] = (char) focusSpeed;
   Serial.print("infinity: ");
   Serial.println(infinity);
   Serial.print("closefocus: ");
@@ -107,7 +116,7 @@ void setup() {
   Serial.println(stepsize);
   
    
-  Serial.println("INIT: Start");
+
    // Simulate eeprom on 0x51
   Serial.println ("INIT: i2c: Listen on 0x51");
   Wire.begin(0x51);
@@ -150,8 +159,9 @@ void setup() {
   
   // Switch to stills mode.
   Serial.println("INIT: Switch to stills mode");
-  sendCommand(switchToStill, 4);                // Push the switchToStill[] array out on the UART.
-
+  sendCommand(switchToStill, sizeof(switchToStill));   // Push the switchToStill[] array out on the UART.
+  Serial.println("INIT: Set focus speed");
+  sendCommand(setFocusSpeed, sizeof(setFocusSpeed));
   focusPosition = focusToX[8] ;                 // PEEK MSB of focus position from buffer.
   Serial.println("INIT: End");
 }
@@ -163,10 +173,10 @@ void loop() {
 //  Serial.println(analogPot);
   focusValue = analogPot * stepsize;
 // Serial.print("focusValue: ");
-//  Serial.println(focusValue);
+// Serial.println(focusValue);
   focusValue += infinity;
-//  Serial.print("focusValue+infinity: ");
-//  Serial.println(focusValue);
+// Serial.print("focusValue+infinity: ");
+// Serial.println(focusValue);
   
   focusTo = (unsigned int) focusValue;
   if(focusTo > closefocus) focusTo = closefocus;
@@ -185,7 +195,11 @@ void loop() {
   // Has the analog value changed more than the set threshold?
   // If it has, refocus the lens.
   if(( focusTo > (oldfocusTo + focusStepSize)) || (focusTo < (oldfocusTo - focusStepSize))) {
+  Serial.print("analog 0 is: ");
+  Serial.println(analogPot);
+  Serial.printf("focusPosition[] is 0x%0X 0x%0X 0x%0X 0x%0X\n", converter.focusPosition[0], converter.focusPosition[1], converter.focusPosition[2], converter.focusPosition[3]);
     oldfocusTo = focusTo; 
+    
     doAnalogFocus();
   }
 
@@ -214,7 +228,7 @@ void loop() {
     focusToInfinity = !focusToInfinity;
     Serial.print("Focusing, please wait... ");
     digitalWrite(ledPin, HIGH);   // Turn on LED, to show that we're busy.
-    delay(5000);                  // It takes a while to slew the lens from end to end at default (slow) speed.
+    delay(5000 / focusSpeed);     // It takes a while to slew the lens from end to end at default (slow) speed.
     Serial.println("done");
   }
 
@@ -296,7 +310,7 @@ void setAF() {
   Serial.print("Focus to step ");
   Serial.println(focusPosition);
   Serial1.write(buf, buflen);
-  delay(1000); // Give it some time to move focus.
+  delay(1000 / focusSpeed); // Give it some time to move focus.
 }
 
 
@@ -311,6 +325,7 @@ void setInfinity() {
   Serial1.write(buf, buflen);
   focusPosition = 0;
   focusToX[8] = focusPosition;
+  delay(3000 / focusSpeed);
 }
 
 void setClose() {
@@ -325,6 +340,7 @@ void setClose() {
   Serial1.write(buf, buflen);
   focusPosition = 4;
   focusToX[8] = focusPosition;
+  delay(3000  / focusSpeed);
 }
 
 // Send arbitrary string to camera.
@@ -383,7 +399,6 @@ void doAnalogFocus(){
   focusToX[8] = converter.focusPosition[2];
   focusToX[9] = converter.focusPosition[3];
   sendCommand(focusToX, sizeof(focusToX));
-  delay(500);
 }
 
 void SwapFourBytes() {
