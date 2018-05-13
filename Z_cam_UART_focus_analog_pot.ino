@@ -96,7 +96,7 @@ void setup() {
 
   span = closefocus - infinity;  // How many steps there are between infinity and closest focus, as an integer.
   stepsize = (float)span / 1024; // Anlog values range 0 - 1023. stepsize is how much to change the focus position value when the analog value changes by 1.
-                                // With my Olympus 25/1.8 lens' values for infinity and close focus, stepsize ends up being 0.98.
+                                  // With my Olympus 25/1.8 lens' values for infinity and close focus, stepsize ends up being 0.98.
   Serial.print("infinity: ");
   Serial.println(infinity);
   Serial.print("closefocus: ");
@@ -169,7 +169,7 @@ void loop() {
 //  Serial.println(focusValue);
   
   focusTo = (unsigned int) focusValue;
-  if(focusTo > closefocus) focusTo = focusTo;
+  if(focusTo > closefocus) focusTo = closefocus;
   if(focusTo < infinity) focusTo = infinity;
 //  Serial.print("focusTo: ");
 //  Serial.println(focusTo);
