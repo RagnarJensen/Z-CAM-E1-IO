@@ -14,10 +14,9 @@ The grey, furry things on the camera are [Rycote Micro Windjammers](https://ryco
 Which pin is what on the Teensy 2.0
 
 ![The breadboard](Breadboard.jpg)
-The breadboard set up for UART control.
-The two resistors on the right are pull-ups for the i2c lines.
+The breadboard set up for UART control with push buttons.
 
 ![The breadboard with analog input added](Focus_control_by_analog_input.jpg)
 The breadbord with a potentiometer added, for analog input.
-Code for it is in Z_cam_UART_focus_analog_pot.ino
+Code for that is in [Z_cam_UART_focus_analog_pot.ino](https://[Z_cam_UART_focus_analog_pot.ino)
 
