@@ -5,16 +5,19 @@ This repository will hold bits and bobs from my experiments with the Z CAM E1's 
 and the API described at https://github.com/imaginevision/Z-Camera-Doc.
 
 For Arduino stuff, I test on a close relative to it, a [Teensy 2.0 by PJRC](https://www.pjrc.com/store/teensy.html).
-[Teensy 2.0 pinout](Teensy_2_0.png)
-In the Focus folder, there are Arduino sketches that have to do with focusing the lens in different ways.
 
-The Flash folder holds sketches for firing an external flash.
 ![My test setup](Test_setup.jpg)
 Bitscope oscilloscope/logic analyzer, breadboard, camera, batteries as focus targets and a CVBS monitor.
 The grey, furry things on the camera are [Rycote Micro Windjammers](https://rycote.com/microphone-windshield-shock-mount/micro-windjammers/).
 
-![Connections on the Teensy](Teensy_2_0.png)
+![Connections on the Teensy](Connections_Teensy.jpg)
 Which pin is what on the Teensy 2.0
 
+![The breadboard](Breadboard.jpg)
+The breadboard set up for UART control with push buttons.
+
+![The breadboard with analog input added](Focus_control_by_analog_input.jpg)
+The breadbord with a potentiometer added, for analog input.
+Code for that is in [Z_cam_UART_focus_analog_pot.ino](https://github.com/RagnarJensen/Z-CAM-E1-IO/blob/master/Z_cam_UART_focus_analog_pot.ino)
 
 
