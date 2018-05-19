@@ -13,6 +13,9 @@ Test setup. Bitscope Micro oscilloscope/logic analyzer, breadboard with a Teensy
 ![Flash connection to the Teensy](Flash_Trigger_Circuit.jpg)
 Digital output pin on Teensy 2.0 connects to flash's trigger pin via a transistor. When the Teensy's digital pin goes HIGH, the transistor conducts, pulling the flashs' trigger voltage down and that sets the flash off.
 
+The resistor value isn't critical, you just need enough current to the base to get the transistor to saturate. The transistor type isn't critical either. Just about any small-signal NPN will do.
+
+Beware of high trigger voltage, though!!! Some flashes from the Good Old Days can have several hundred volts on the trigger pin. Measure before you connect...
 ![The test flash](Olympus_T32.jpg)
 For my tests, I use an old Olympus T-32 flash. I have six of them. I like them a lot, because they are quite powerful in a small package. The reflector can tilt up to 90º and down 7º (for close-ups) and they can be powered from mains AC.  They have a connector on the side that mimics the pins on the foot, making it easy to connect them to each other in a multi-flash setup. Chopping up a cable makes it as easy to connect them to other things :wink:
 
