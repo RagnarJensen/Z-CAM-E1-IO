@@ -86,7 +86,7 @@ char    setFocusSpeed[] = {0xea, 0x02, 0x07, 0x0e, 0x35, 0x02, 0x00, 0x00, 0x00,
  */
 char    focusToInf[]     = {0xea, 0x02, 0x07, 0x0e, 0x34, 0x02, 0x00, 0x00, 0x00, 0x9b};  // The four last bytes are the "inifinity" lens position of my Olympus 25/1.8 lens.
 char    focusToClose[]   = {0xea, 0x02, 0x07, 0x0e, 0x34, 0x02, 0x00, 0x00, 0x04, 0x84};  // Ditto, for when the lens is focused as close as it can.
-char    focusToX[]       = {0xea, 0x02, 0x07, 0x0e, 0x34, 0x02, 0x00, 0x00, 0x00, 0x9b};  // We manipulate the next to last byte of this array, with values between 0 and 4, to focus in 5 "steps" with the buttons.
+char    focusToX[]       = {0xea, 0x02, 0x07, 0x0e, 0x34, 0x02, 0x00, 0x00, 0x00, 0x9b};  // We manipulate the two last bytes of this array, with values derived from the potentiometer's position.
 
 char    capture[]        = {0xea, 0x02, 0x01, 0x07}; // Command string to take a picture.
 
@@ -103,7 +103,7 @@ bool    focusModeIsAF = true;  // Is camera set to MF or AF?
 bool    focusToInfinity = true;// Holds direction to slew focus when button 1 is pressed.
 
 int analogFocusPot;                 // Values from potentiometer on pin A0.
-int analogFlashPot;                 // Values from potentiometer on pin A1.
+ // =================================================================================================================
 
 void setup() {
   Serial.begin (9600); // Console
@@ -112,8 +112,6 @@ void setup() {
   span = closefocus - infinity;  // How many steps there are between infinity and closest focus, as an integer.
   stepsize = (float)span / 1024; // Anlog values range 0 - 1023. stepsize is how much to change the focus position value when the analog value changes by 1.
                                   // With my Olympus 25/1.8 lens' values for infinity and close focus, stepsize ends up being 0.98.
-
-  
   Serial.print("infinity: ");
   Serial.println(infinity);
   Serial.print("closefocus: ");
@@ -122,8 +120,6 @@ void setup() {
   Serial.println(span);
   Serial.print("stepsize: ");
   Serial.println(stepsize);
-  
-   
 
    // Simulate eeprom on 0x51
   Serial.println ("INIT: i2c: Listen on 0x51");
