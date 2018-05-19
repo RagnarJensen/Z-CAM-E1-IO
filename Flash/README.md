@@ -1,6 +1,8 @@
 # Z-CAM-E1-IO
 Firing an external flash via the Teensy's digital pins.
 
+![My very first successful flash exposure with the Z CAM E1](First_Flash_Pic_with_ZCAM_E1_anno.jpg)
+
 The Z CAM E1 was never designed to sync with electronic flash and it shows. The major obstacle is the electronic shutter with its slow read-out time. That means that the shutter speed needs to be kept low, in my tests anything faster than about 1/20 second results in dark bands at the upper or lower edges.
 
 The next hindrance is the delay between "pressing the button" to take a picture and the picture actually being taken. The delay is ~150 milliseconds. It's easy to implement a delay as such on an Arduino, but the camera's delay isn't consistent, it changes a couple of milliseconds up and down from shot to shot in an unpredictable manner. It can be worked around by choosing a slow shutter speed and combine that with a small aperture, which calls for stronger flash output, i.e. longer burn times.
