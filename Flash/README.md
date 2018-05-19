@@ -9,6 +9,7 @@ The next hindrance is the delay between "pressing the button" to take a picture 
 
 ![My test setup](Flash_Test_Setup.jpg)
 Test setup. Bitscope Micro oscilloscope/logic analyzer, breadboard with a Teensy 2.0, batteries and a nice postcard from Spain as focus targets, the camera itself, 5" CVBS monitor and an old analog flash from my Olympus OM film days.
+Apart from the added transistor circuit, the breadboard is wired exactly the same as in the [Focus setup](https://github.com/RagnarJensen/Z-CAM-E1-IO/tree/master/Focus). Two of the buttons have a different funtion here, though.
 
 ![Flash connection to the Teensy](Flash_Trigger_Circuit.jpg)
 Digital output pin on Teensy 2.0 connects to flash's trigger pin via a transistor. When the Teensy's digital pin goes HIGH, the transistor conducts, pulling the flashs' trigger voltage down and that sets the flash off.
