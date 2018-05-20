@@ -66,15 +66,15 @@ ArrayToInteger converter = {0,0,0,0x9b};  // Create a converter between 32-bit i
 // Arrays of bytes, that make up commands to send to the camera.
 // To send commands to the camera, we just push out one of these arrays onto the UART with Serial1.write() 
 // And that's Serial with the number one at it's end, not Serial with an extra letter L.
-char    switchToMovie[] = {0xea, 0x02, 0x01, 0x02};
-char    switchToStill[] = {0xea, 0x02, 0x01, 0x03};
-char    switchToPB[]    = {0xea, 0x02, 0x01, 0x04};
-char    startPB[]       = {0xea, 0x02, 0x01, 0x0a};
-char    stopPB[]        = {0xea, 0x02, 0x01, 0x0b};
+byte    switchToMovie[] = {0xea, 0x02, 0x01, 0x02};
+byte    switchToStill[] = {0xea, 0x02, 0x01, 0x03};
+byte    switchToPB[]    = {0xea, 0x02, 0x01, 0x04};
+byte    startPB[]       = {0xea, 0x02, 0x01, 0x0a};
+byte    stopPB[]        = {0xea, 0x02, 0x01, 0x0b};
 
-char    switchToMF[]    = {0xea, 0x02, 0x04, 0x0e, 0x16, 0x01, 0x00};
-char    switchToAF[]    = {0xea, 0x02, 0x04, 0x0e, 0x16, 0x01, 0x01};
-char    setFocusSpeed[] = {0xea, 0x02, 0x07, 0x0e, 0x35, 0x02, 0x00, 0x00, 0x00, 0x01}; // Last byte (bytes?) hold(s) focus speed, camera's default is 1.
+byte    switchToMF[]    = {0xea, 0x02, 0x04, 0x0e, 0x16, 0x01, 0x00};
+byte    switchToAF[]    = {0xea, 0x02, 0x04, 0x0e, 0x16, 0x01, 0x01};
+byte    setFocusSpeed[] = {0xea, 0x02, 0x07, 0x0e, 0x35, 0x02, 0x00, 0x00, 0x00, 0x01}; // Last byte (bytes?) hold(s) focus speed, camera's default is 1.
 /*
  * These next three arrays hold commands to set the focus position at different points.
  * I got the values for the first two (infinity and close focus) by simply performing AF operations by hand, with the camera's buttons, 
@@ -84,15 +84,15 @@ char    setFocusSpeed[] = {0xea, 0x02, 0x07, 0x0e, 0x35, 0x02, 0x00, 0x00, 0x00,
  * The focus point is held in the last four bytes of the arrays. I have not seen anything but 0x00 in the first two of those four bytes,
  * making me think that the position is represented by a 16-bit integer held in the last two bytes. Someone really ought to test that, too ;-)
  */
-char    focusToInf[]     = {0xea, 0x02, 0x07, 0x0e, 0x34, 0x02, 0x00, 0x00, 0x00, 0x9b};  // The four last bytes are the "inifinity" lens position of my Olympus 25/1.8 lens.
-char    focusToClose[]   = {0xea, 0x02, 0x07, 0x0e, 0x34, 0x02, 0x00, 0x00, 0x04, 0x84};  // Ditto, for when the lens is focused as close as it can.
-char    focusToX[]       = {0xea, 0x02, 0x07, 0x0e, 0x34, 0x02, 0x00, 0x00, 0x00, 0x9b};  // We manipulate the two last bytes of this array, with values derived from the potentiometer's position.
+byte    focusToInf[]     = {0xea, 0x02, 0x07, 0x0e, 0x34, 0x02, 0x00, 0x00, 0x00, 0x9b};  // The four last bytes are the "inifinity" lens position of my Olympus 25/1.8 lens.
+byte    focusToClose[]   = {0xea, 0x02, 0x07, 0x0e, 0x34, 0x02, 0x00, 0x00, 0x04, 0x84};  // Ditto, for when the lens is focused as close as it can.
+byte    focusToX[]       = {0xea, 0x02, 0x07, 0x0e, 0x34, 0x02, 0x00, 0x00, 0x00, 0x9b};  // We manipulate the two last bytes of this array, with values derived from the potentiometer's position.
 
-char    capture[]        = {0xea, 0x02, 0x01, 0x07}; // Command string to take a picture.
+byte    capture[]        = {0xea, 0x02, 0x01, 0x07}; // Command string to take a picture.
 
-char    *buf;
+byte    *buf;
 int     buflen = 7;           // Number of bytes in buffer, varies depending on command.
-char    responseBuf[20];      // Responses from camera go into this buffer. I have no idea whether 20 bytes is enough...
+byte    responseBuf[20];      // Responses from camera go into this buffer. I have no idea whether 20 bytes is enough...
 size_t  responseLen = 0;
 
 unsigned int focusPosition;   // Not used to it's full potential, yet... I just stuff fixed values into it for now.
@@ -221,9 +221,9 @@ void loop() {
     Serial.println("Button B0");
     if (focusModeIsAF) {
       setMF(); 
-          } else {
+    } else {
       setAF();
-      }
+    }
   }
   // =================================================================================================================    
   // Read button 1, alternately set focus to infinity or close, if pressed.
@@ -326,12 +326,12 @@ void setClose() {
 }
 // =================================================================================================================
 // Send arbitrary string to camera.
-void sendCommand(char *buf, int buflen) {
+void sendCommand(byte *buf, int buflen) {
   Serial.println("Send buffer");
   Serial1.write(buf, buflen);
 }
 // =================================================================================================================
-size_t readResponse(char *buffer, int length) {
+size_t readResponse(byte *buffer, int length) {
   size_t rlen;
   unsigned int i;
   Serial.println("Waiting for camera response...");
