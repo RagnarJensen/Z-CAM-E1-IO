@@ -134,12 +134,12 @@ void setup() {
   Serial.println("INIT: Buttons");
   pinMode(PIN_B0, INPUT_PULLUP);  // Switch focus mode.
   pinMode(PIN_B1, INPUT_PULLUP);  // Focus to near or far end.
-  pinMode(PIN_B2, INPUT_PULLUP);  // Focus farther away.
-  pinMode(PIN_B3, INPUT_PULLUP);  // Focus closer.
+  pinMode(PIN_B2, INPUT_PULLUP);  // Increase flash delay.
+  pinMode(PIN_B3, INPUT_PULLUP);  // Decrease flash delay.
   pinMode(PIN_B7, INPUT_PULLUP);  // Shutter.
 
   Serial.println("INIT: FLASH TRIGGER");
-  flashDelay = 148;   // Lots of trial and error to find this...
+  flashDelay = 148;   // Lots of trial and error to find this... It may very well be different for your camera and/or flash.
   Serial.printf("Flash delay: %i ms\n", flashDelay);
   pinMode(flashPin, OUTPUT);
   
