@@ -1,5 +1,10 @@
 # Z-CAM-E1-IO
-Firing an external flash via the Teensy's digital pins.
+Firing an external flash from the Teensy's digital pins.
+
+In this folder you will find a Teensy/Arduino sketch that shows how to fire an electronic flash from a digital output pin. The only extra components you need, are a resistor and a transistor.
+
+The code is just a proof of concept. It's definitely not production ready.
+
 
 ![My very first successful flash exposure with the Z CAM E1](First_Flash_Pic_with_ZCAM_E1_anno.jpg)
 
@@ -21,6 +26,7 @@ Digital output pin on Teensy 2.0 connects to flash's trigger pin via a transisto
 The resistor value isn't critical, you just need enough current to the base to get the transistor to saturate. The transistor type isn't critical either. Just about any small-signal NPN will do.
 
 Beware of high trigger voltage, though!!! Some flashes from the Good Old Days can have several hundred volts on the trigger pin. Measure before you connect...
+
 ![The test flash](Olympus_T32.jpg)
 For my tests, I use an old Olympus T-32 flash. I have six of them. I like them a lot, because they are quite powerful in a small package. The reflector can tilt up to 90º and down 7º (for close-ups) and they can be powered from mains AC.  They have a connector on the side that mirrors the pins on the foot (they are actually wired in parallel), making it easy to connect several of them to each other in a multi-flash setup. Chopping up a cable makes it as easy to connect them to other things, too :wink:
 

@@ -1,11 +1,9 @@
 # Z-CAM-E1-IO
-Controlling the Z CAM E1 through its I/O port.
+Controlling lens focus on the Z CAM E1 through its I/O port.
 
-This repository will hold bits and bobs from my experiments with the Z CAM E1's I/O port
-and the API described at https://github.com/imaginevision/Z-Camera-Doc.
+In this folder you will find a Teensy/Arduino sketch that shows how to send commands over the UART lines, to control the focus of the lens.
 
-For Arduino stuff, I test on a close relative to it, a [Teensy 2.0 by PJRC](https://www.pjrc.com/store/teensy.html).
-
+The code is just a proof of concept. It's definitely not production ready.
 ![My test setup](Test_setup.jpg)
 Bitscope oscilloscope/logic analyzer, breadboard, camera, batteries as focus targets and a CVBS monitor.
 The grey, furry things on the camera are [Rycote Micro Windjammers](https://rycote.com/microphone-windshield-shock-mount/micro-windjammers/).
@@ -18,6 +16,5 @@ The breadboard set up for UART control with push buttons.
 
 ![The breadboard with analog input added](Focus_control_by_analog_input.jpg)
 The breadbord with a potentiometer added, for analog input.
-Code for that is in [Z_cam_UART_focus_analog_pot.ino](https://github.com/RagnarJensen/Z-CAM-E1-IO/blob/master/Z_cam_UART_focus_analog_pot.ino)
 
 
