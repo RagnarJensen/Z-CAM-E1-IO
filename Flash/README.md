@@ -1,7 +1,7 @@
 # Z-CAM-E1-IO
-Firing an external flash from the Teensy's digital pins.
+Firing an external flash from a Teensy digital output pin.
 
-In this folder you will find a Teensy/Arduino sketch that shows how to fire an electronic flash from a digital output pin. The only extra components you need, are a resistor and a transistor.
+In this folder you will find a Teensy/Arduino sketch that shows how to fire an electronic flash from a digital output pin. The only extra components you need are a resistor and a transistor.
 
 The code is just a proof of concept. It's definitely not production ready.
 
