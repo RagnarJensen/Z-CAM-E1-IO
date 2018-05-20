@@ -23,7 +23,7 @@ Which pin is what on the Teensy 2.0
 ![Flash connection to the Teensy](Flash_Trigger_Circuit.jpg)
 Digital output pin on Teensy 2.0 connects to flash's trigger pin via a transistor. When the Teensy's digital pin goes HIGH, the transistor conducts, pulling the flashs' trigger voltage down and that sets the flash off.
 
-The resistor value isn't critical, you just need enough current to the base to get the transistor to saturate. The transistor type isn't critical either. Just about any small-signal NPN will do.
+The resistor value isn't critical, you just need enough current to the base to get the transistor to saturate. The transistor type isn't critical either. Just about any small-signal NPN will probably do.
 
 Beware of high trigger voltage, though!!! Some flashes from the Good Old Days can have several hundred volts on the trigger pin. Measure before you connect...
 
