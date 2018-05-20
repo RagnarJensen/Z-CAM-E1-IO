@@ -28,7 +28,7 @@ The resistor value isn't critical, you just need enough current to the base to g
 Beware of high trigger voltage, though!!! Some flashes from the Good Old Days can have several hundred volts on the trigger pin. Measure before you connect...
 
 ![The test flash](Olympus_T32.jpg)
-For my tests, I use an old Olympus T-32 flash. I have six of them. I like them a lot, because they are quite powerful in a small package. The reflector can tilt up 90º and down 15º (for close-ups) and they can be powered from mains AC.  They have a connector on the side that mirrors the pins on the foot (they are actually wired in parallel), making it easy to connect several of them to each other in a multi-flash setup. Chopping up a cable makes it as easy to connect them to other things, too :wink:
+For my tests, I use an old [Olympus T 32](https://www.mir.com.my/rb/photography/hardwares/classics/olympusom1n2/shared/flash/t32flash/index.htm) flash. I have six of them. I like them a lot, because they are quite powerful in a small package. The reflector can tilt up 90º and down 15º (for close-ups) and they can be powered from mains AC.  They have a connector on the side that mirrors the pins on the foot (they are actually wired in parallel), making it easy to connect several of them to each other in a multi-flash setup. Chopping up a cable makes it as easy to connect them to other things, too :wink:
 
 
 
