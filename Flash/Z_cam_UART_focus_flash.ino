@@ -224,7 +224,6 @@ void loop() {
           } else {
       setAF();
       }
-      focusModeIsAF = !focusModeIsAF;
   }
   // =================================================================================================================    
   // Read button 1, alternately set focus to infinity or close, if pressed.
