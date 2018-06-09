@@ -9,11 +9,11 @@ Finding the plugs have not been easy, as there is scarce info about which type t
 I made this picture of the camera's I/O port pinout a while ago. I have taken the pin numbering from [Z CAM's own picture](https://github.com/imaginevision/Z-Camera-Doc/blob/master/expansion/pin.jpg), which is the only illustration showing all the port's pins I've found. The pin numbering they use does not match up with the one the plug manufacturer use, but I'll use Z CAM's throughout anyway, to avoid confusion.
 ![Z CAM E1 IO port pinout](https://github.com/RagnarJensen/Z-CAM-E1-IO/blob/master/Flash/e1_io_pinout.jpg)
 
-This what one of my cables looks like.
+This is what one of my cables looks like.
 ![My home-made cable](connectors_pinout.png)
 Standard pin headers with some hot glue over the solder points, to keep the pins from escaping from the plastic part they are sitting in.
 There are two pin headers, one with the odd numbered pins and the other with the even numbered ones.
-The header pin numbers correspond to the camera's I/O port pin numbers. Camera pins 10 and 12 (CVBS) goes directly to a RCA connector and are not connected to the breadboard headers.
+The header pin numbers shown are those of the camera's I/O port pins. Camera's pins 10 and 12 (CVBS) goes directly to a RCA connector and are not connected to the breadboard headers.
 
 
 Here's another of my cables, in the breadboard.
