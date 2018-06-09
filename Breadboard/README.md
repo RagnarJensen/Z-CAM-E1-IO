@@ -20,6 +20,7 @@ Here's another of my cables, in the breadboard.
 ![Blue cable in BB odd pins](connector_odd_pins.png)
 In the background, you can see that I've not used a coaxial cable for the CVBS connector. For short runs of composite video, a twisted pair suffices.
 ![Blue cable in BB even pins](connector_even_pins.png)
+Even numbered pins. No pins 10 and 12 (CVBS), since they go directly from the camera to the RCA connector.
 
 ## Breadboard set-up
 Fritzing image of the breadboard:
