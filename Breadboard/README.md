@@ -18,9 +18,11 @@ The header pin numbers shown are those of the camera's I/O port pins. Camera's p
 
 Here's another of my cables, in the breadboard.
 ![Blue cable in BB odd pins](connector_odd_pins.png)
+Odd numbered pins, showing pin 11 connected to ground (orange wire) and the pull-up resistor for i2c pin 7 (blue wire).
 In the background, you can see that I've not used a coaxial cable for the CVBS connector. For short runs of composite video, a twisted pair suffices.
 ![Blue cable in BB even pins](connector_even_pins.png)
 Even numbered pins. No pins 10 and 12 (CVBS), since they go directly from the camera to the RCA connector.
+Pin 2 (VCOM) is connected to the board's positive power rail, providing power to the entire breadboard. Another pull-up resistor connected to i2c pin 8.
 
 ## Breadboard set-up
 Fritzing image of the breadboard:
