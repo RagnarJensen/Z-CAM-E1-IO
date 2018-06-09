@@ -10,6 +10,8 @@ The Focus folder holds a sketch that shows how to focus the lens with UART comma
 
 The Flash folder holds a sketch for firing an external flash.
 
+The Breadboard folder contains descriptions of my cabling and breadboard set-up.
+
 For Arduino stuff, I test on a close relative to it, a [Teensy 2.0 by PJRC](https://www.pjrc.com/store/teensy.html).
 
 Teensy 2.0 pinout:
