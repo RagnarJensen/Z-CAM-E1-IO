@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.1686 4.9402" xmlns:svg="http://www.w3.org/2000/svg" version="1.2" x="0in" width="1.109in" baseProfile="tiny"  height="0.194496in" y="0in">
+    <g id="copper1">
+        <rect stroke="none" fill="#F7BD13" id="connector0pad" x="0.9144" width="0.9144" stroke-linecap="round" stroke-width="0" connectorname="P$1" height="1.8414" y="0"/>
+        <rect stroke="none" fill="#F7BD13" id="connector1pad" x="3.4544" width="0.9144" stroke-linecap="round" stroke-width="0" connectorname="P$2" height="1.8414" y="3.0988"/>
+        <rect stroke="none" fill="#F7BD13" id="connector2pad" x="5.9944" width="0.9144" stroke-linecap="round" stroke-width="0" connectorname="P$3" height="1.8414" y="0"/>
+        <rect stroke="none" fill="#F7BD13" id="connector3pad" x="8.5344" width="0.9144" stroke-linecap="round" stroke-width="0" connectorname="P$4" height="1.8414" y="3.0988"/>
+        <rect stroke="none" fill="#F7BD13" id="connector4pad" x="11.0744" width="0.9144" stroke-linecap="round" stroke-width="0" connectorname="P$5" height="1.8414" y="0"/>
+        <rect stroke="none" fill="#F7BD13" id="connector5pad" x="13.6144" width="0.9144" stroke-linecap="round" stroke-width="0" connectorname="P$6" height="1.8414" y="3.0988"/>
+        <rect stroke="none" fill="#F7BD13" id="connector6pad" x="16.1544" width="0.9144" stroke-linecap="round" stroke-width="0" connectorname="P$7" height="1.8414" y="0"/>
+        <rect stroke="none" fill="#F7BD13" id="connector7pad" x="18.6944" width="0.9144" stroke-linecap="round" stroke-width="0" connectorname="P$8" height="1.8414" y="3.0988"/>
+        <rect stroke="none" fill="#F7BD13" id="connector8pad" x="21.2344" width="0.9144" stroke-linecap="round" stroke-width="0" connectorname="P$9" height="1.8414" y="0"/>
+        <rect stroke="none" fill="#F7BD13" id="connector9pad" x="23.7744" width="0.9144" stroke-linecap="round" stroke-width="0" connectorname="P$10" height="1.8414" y="3.0988"/>
+        <rect stroke="none" fill="#F7BD13" id="connector10pad" x="26.3144" width="0.9144" stroke-linecap="round" stroke-width="0" connectorname="P$11" height="1.8414" y="0"/>
+        <g id="copper0"/>
+    </g>
+    <g id="silkscreen">
+        <line x1="0.635" stroke="#f0f0f0" y2="1.2509" stroke-linecap="round" x2="0.1016" stroke-width="0.2032" class="other" y1="1.2509"/>
+        <line x1="0.1016" stroke="#f0f0f0" y2="3.7401" stroke-linecap="round" x2="0.1016" stroke-width="0.2032" class="other" y1="1.2509"/>
+        <line x1="0.1016" stroke="#f0f0f0" y2="3.7401" stroke-linecap="round" x2="0.6096" stroke-width="0.2032" class="other" y1="3.7401"/>
+        <line x1="28.067" stroke="#f0f0f0" y2="3.7401" stroke-linecap="round" x2="28.067" stroke-width="0.2032" class="other" y1="1.2509"/>
+        <line x1="28.067" stroke="#f0f0f0" y2="1.2509" stroke-linecap="round" x2="27.5336" stroke-width="0.2032" class="other" y1="1.2509"/>
+        <line x1="28.067" stroke="#f0f0f0" y2="3.7401" stroke-linecap="round" x2="27.5336" stroke-width="0.2032" class="other" y1="3.7401"/>
+    </g>
+</svg>
