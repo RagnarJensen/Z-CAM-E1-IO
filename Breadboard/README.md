@@ -17,8 +17,9 @@ The header pin numbers shown are those of the camera's I/O port pins. Camera's p
 
 
 Here's another of my cables, in the breadboard.
+
 ![Blue cable in BB odd pins](connector_odd_pins.png)
-Odd numbered pins, showing pin 11 connected to ground (orange wire) and the pull-up resistor for i2c pin 7 (blue wire).
+Odd numbered pins, showing pin 11 connected to the breadboard's ground rail (orange and green wires) and the pull-up resistor for i2c pin 7 (blue wire).
 In the background, you can see that I've not used a coaxial cable for the CVBS connector. For short runs of composite video, a twisted pair suffices.
 ![Blue cable in BB even pins](connector_even_pins.png)
 Even numbered pins. No pins 10 and 12 (CVBS), since they go directly from the camera to the RCA connector.
@@ -26,7 +27,7 @@ Pin 2 (VCOM) is connected to the board's positive power rail, providing power to
 
 ## Breadboard set-up
 The pins I use on the Teensy 2.0
-![Teesny 2.0 pinout](https://github.com/RagnarJensen/Z-CAM-E1-IO/blob/master/Flash/Connections_Teensy.jpg)
+![Teensy 2.0 pinout](https://github.com/RagnarJensen/Z-CAM-E1-IO/blob/master/Flash/Connections_Teensy.jpg)
 
 Fritzing image of the breadboard:
 ![Fritzing BB](z_cam_io_focus_bb.png)
