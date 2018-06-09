@@ -26,7 +26,7 @@ Pin 2 (VCOM) is connected to the board's positive power rail, providing power to
 
 ## Breadboard set-up
 The pins I use on the Teensy 2.0
-![Teesny 2.0 pinout](https://github.com/RagnarJensen/Z-CAM-E1-IO/blob/master/Focus/Connections_Teensy.jpg)
+![Teesny 2.0 pinout](https://github.com/RagnarJensen/Z-CAM-E1-IO/blob/master/Flash/Connections_Teensy.jpg)
 
 Fritzing image of the breadboard:
 ![Fritzing BB](z_cam_io_focus_bb.png)
