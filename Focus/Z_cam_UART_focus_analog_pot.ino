@@ -47,7 +47,7 @@ int                 focusStepSize = 5;  // How much analog input should change, 
                                         // I get som jitter just by touching the metal shield on my potentiometer...
 
 int                 focusSpeed = 2;     // How fast the lens should move. Camera's default is 1, which is fairly slow (good for those smoooooth focus pulls in video).
-                                        // I have tested up to 10, I don't know the upper limit...
+                                        // I have tested up to 10. I don't know the upper limit, but I've seen a reference to it that suggested 32.
 float               focusValue;
 
 // Used for converting 32 bit integers to byte array and vice versa.
@@ -85,7 +85,7 @@ byte    capture[]        = {0xea, 0x02, 0x01, 0x07}; // Command string to take a
 
 byte    *buf;
 int     buflen = 7;           // Number of bytes in buffer, varies depending on command.
-byte    responseBuf[20];      // Responses from camera go into this buffer. I have no idea whether 20 bytes is enough...
+byte    responseBuf[64];      // Responses from camera go into this buffer.
 size_t  responseLen = 0;
 
 unsigned int focusPosition;   // Not used to it's full potential, yet... I just stuff fixed values into it for now.
