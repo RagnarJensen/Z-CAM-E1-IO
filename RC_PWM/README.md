@@ -2,7 +2,7 @@
 Controlling recording mode, shutter and lens focus on the Z CAM E1 through its I/O port, with a RC system.
 
 In this folder you will find a Teensy/Arduino sketch that shows how to send commands over the UART lines, to control various aspects of the Z CAM E1.
-Input to the Teensy comes from a model car/boat Radio Control system.
+Input to the Teensy comes in part from a model car/boat Radio Control system.
 
 In this sketch, the RC controls are used like this;
  Move Channel 1 (steering) stick to the left to switch between stills and movie mode, move the stick to the right to take a still picture or start/stop movie recording.
