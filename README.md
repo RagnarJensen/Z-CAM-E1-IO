@@ -6,11 +6,13 @@ and the API described at https://github.com/imaginevision/Z-Camera-Doc.
 
 
 
-The Focus folder holds a sketch that shows how to focus the lens with UART commands in different ways.
+The *Focus* folder holds a sketch that shows how to focus the lens with UART commands in different ways.
 
-The Flash folder holds a sketch for firing an external flash.
+The *Flash* folder holds a sketch for firing an external flash.
 
-The Breadboard folder contains descriptions of my cabling and breadboard set-up.
+The *RC_PWM* folder holds a sketch that reads PWM input from a model car/boat Radio Control receiver, changes lens focus and takes pictures or starts/stops movie recording based on PWM pulse width.
+
+The *Breadboard* folder contains descriptions of my cabling and breadboard set-up.
 
 For Arduino stuff, I test on a close relative to it, a [Teensy 2.0 by PJRC](https://www.pjrc.com/store/teensy.html).
 
