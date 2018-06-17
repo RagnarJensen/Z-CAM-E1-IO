@@ -62,10 +62,10 @@ int                 focusStepSize = 5;    // How much analog input should change
 float               flashStepSize = 1;                                          
 
 int                 focusSpeed = 2;       // How fast the lens should move. Camera's default is 1, which is fairly slow (good for those smoooooth focus pulls in video).
-                                          // I have tested up to 10, I don't know the upper limit...
+                                          // I have tested up to 10, the upper limit is supposedly 32.
 float               focusValue;
 
-int                 pwmFocusStepSize=10;   
+int                 pwmFocusStepSize=10;    // How much the pulse width (in microseconds)on PWM input has to change, before we actually re-focus the lens.
 int                 pwmInValue1, oldpwmInValue1;
 int                 pwmInValue2, oldpwmInValue2;
 
@@ -118,7 +118,7 @@ byte    getLensFocusPosition[] = {0xea, 0x02, 0x02, 0x0f, 0x34};
 
 byte    *buf;
 int     buflen = 7;           // Number of bytes in buffer, varies depending on command.
-byte    responseBuf[32];      // Responses from camera go into this buffer. I have no idea whether 32 bytes is enough...
+byte    responseBuf[64];      // Responses from camera go into this buffer. I have no idea whether 64 bytes is enough...
 size_t  responseLen = 0;
 
 unsigned int focusPosition;   // Not used to it's full potential, yet... I just stuff fixed values into it for now.
