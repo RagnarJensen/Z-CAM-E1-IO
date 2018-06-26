@@ -4,9 +4,9 @@
 
 I have made a couple of cables (I have several breadboards for the E1 going) using ordinary pin headers and plugs I've found on eBay.
  
-Finding the plugs have not been easy, as there is scarce info about which type to use. I have found two different, working plugs on eBay, [one of which is no longer available](https://www.ebay.co.uk/itm/8Pcs-Mini-USB-12-Pin-Male-Plug-Connector-For-DIY/170580271467) and [this one](https://www.ebay.co.uk/itm/12-x-Mini-USB-Plug-Male-12-Pin-Used-for-SAMSUNG-Product/180396604436), which I'm using right now.
+Finding the plugs has not been easy, as there is scarce info about which type to use. I have found two different, working plugs on eBay, [one of which is no longer available](https://www.ebay.co.uk/itm/8Pcs-Mini-USB-12-Pin-Male-Plug-Connector-For-DIY/170580271467) and [this one](https://www.ebay.co.uk/itm/12-x-Mini-USB-Plug-Male-12-Pin-Used-for-SAMSUNG-Product/180396604436), which I'm using right now.
 
-I made this picture of the camera's I/O port pinout a while ago. I have taken the pin numbering from [Z CAM's own picture](https://github.com/imaginevision/Z-Camera-Doc/blob/master/expansion/pin.jpg), which is the only illustration showing all the port's pins I've found. The pin numbering they use does not match up with the one the plug manufacturer uses, but I'll use Z CAM's throughout anyway, to avoid confusion.
+I made this picture of the camera's I/O port pinout a while ago. I have taken the pin numbering from [Z CAM's own picture](https://github.com/imaginevision/Z-Camera-Doc/blob/master/expansion/pin.jpg), which is the only illustration showing all the port's pins I've found. The pin numbering they use does not match up with the one the plug manufacturer uses, but I'll use Z CAM's numbering throughout anyway, to avoid confusion.
 ![Z CAM E1 IO port pinout](https://github.com/RagnarJensen/Z-CAM-E1-IO/blob/master/Flash/e1_io_pinout.jpg)
 
 This is what one of my cables looks like.
