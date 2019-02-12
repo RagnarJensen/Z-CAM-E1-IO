@@ -92,7 +92,7 @@ byte    capture[]        = {0xea, 0x02, 0x01, 0x07}; // Command string to take a
 
 byte    *buf;
 int     buflen = 7;           // Number of bytes in buffer, varies depending on command.
-byte    responseBuf[20];      // Responses from camera go into this buffer. I have no idea whether 20 bytes is enough...
+byte    responseBuf[64];      // Responses from camera go into this buffer. I have no idea whether 64 bytes is enough...
 size_t  responseLen = 0;
 
 unsigned int focusPosition;   // Not used to it's full potential, yet... I just stuff fixed values into it for now.
